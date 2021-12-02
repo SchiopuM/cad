@@ -36,6 +36,9 @@ export const portfolio = [
     image: project12,
     title: 'Efficiency',
   },
+];
+
+export const bigSizes = [
   {
     image: project4,
     title: 'Professionalism',

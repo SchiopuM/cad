@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Item from '../common/Item';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import Card from '../common/Card';
-import { portfolio } from '../assets/portfolioState';
+import { portfolio, bigSizes } from '../assets/portfolioState';
 import footerImage from '../assets/images/foot.jpg';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Container = styled.div`
   padding: 5% 15%;
@@ -12,6 +13,7 @@ const Container = styled.div`
 
 const Portfolio = () => {
   const [open, setOpen] = useState(false);
+  const [seeMore, setSeeMore] = useState(false);
 
   const toggle = () => setOpen((prevState) => !prevState);
 
@@ -21,8 +23,14 @@ const Portfolio = () => {
     </Card>
   ));
 
+  const extraService = bigSizes.map((el, index) => (
+    <Card key={`portfolio-${index}`} image={el.image}>
+      <Item image={el.image} height='400px' />
+    </Card>
+  ));
+
   return (
-    <Container id='services'>
+    <Container id='portfolio'>
       <Typography fontSize='24px' fontWeight='bold' color='#263640'>
         Portfolio
       </Typography>
@@ -46,8 +54,7 @@ const Portfolio = () => {
           >
             read more...
           </Typography>
-        ) : null}
-        {open ? (
+        ) : (
           <>
             {`, adding exterior improvements to your property, replacing or adding a
             fence, installing a pool or even for understanding the elevations of
@@ -62,13 +69,13 @@ const Portfolio = () => {
               fontSize='16px'
               fontWeight='medium'
               color='#263640'
-              sx={{ ':hover': { cursor: 'pointer' } }}
+              sx={{ ':hover': { cursor: 'pointer', width: '70px' } }}
               onClick={toggle}
             >
               close...
             </Typography>
           </>
-        ) : null}
+        )}
       </Typography>
       <Box
         sx={{
@@ -80,6 +87,18 @@ const Portfolio = () => {
       >
         {showService}
       </Box>
+
+      {seeMore ? <Box>{extraService}</Box> : null}
+
+      <Button
+        color='inherit'
+        onClick={() => setSeeMore((prevState) => !prevState)}
+      >
+        <KeyboardArrowDownIcon
+          sx={{ transform: seeMore ? 'rotate(180deg)' : null }}
+        />
+      </Button>
+
       <Box display='flex' justifyContent='flex-end'>
         <img
           src={footerImage}

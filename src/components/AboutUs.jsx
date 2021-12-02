@@ -5,7 +5,7 @@ import { aboutUs } from '../assets/aboutUs';
 import Item from '../common/Item';
 
 const Container = styled.div`
-  margin-top: -150px;
+  margin-top: -200px;
   padding: 5% 15%;
   background-color: #f5f8fa;
 `;
@@ -21,7 +21,7 @@ const AboutUs = () => {
     />
   ));
   return (
-    <Container>
+    <Container id='aboutUs'>
       <Typography fontSize='24px' fontWeight='bold' color='#263640'>
         About us
       </Typography>

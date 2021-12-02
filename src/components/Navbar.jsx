@@ -27,13 +27,13 @@ const Link = styled.a`
 const Navbar = () => (
   <NavbarContainer>
     <a href='/'>
-      <img src={logo} height='100px' />
+      <img src={logo} height='80px' />
     </a>
     <LinkGroup>
       <Link href='/'>Home</Link>
       <Link href='#services'>Services</Link>
-      <Link href='#'>Portfolio</Link>
-      <Link href='#'>About us</Link>
+      <Link href='#portfolio'>Portfolio</Link>
+      <Link href='#aboutUs'>About us</Link>
     </LinkGroup>
     <ContactDialog />
   </NavbarContainer>
