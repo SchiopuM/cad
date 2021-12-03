@@ -19,7 +19,7 @@ const Portfolio = () => {
 
   const showService = portfolio.map((el, index) => (
     <Card key={`card-${index}`} image={el.image}>
-      <Item image={el.image} height='400px' />
+      <Item image={el.image} height='400px' alt='portfolio' />
     </Card>
   ));
 
@@ -103,6 +103,7 @@ const Portfolio = () => {
         <img
           src={footerImage}
           height='230px'
+          alt='footerImage'
           style={{
             boxShadow: '-21px 50px 1px 5px #F5F8FA',
           }}

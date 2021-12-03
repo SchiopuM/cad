@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 
 const Item = ({
+  alt,
   image,
   title,
   description,
@@ -12,7 +13,7 @@ const Item = ({
   textAlign = 'center',
 }) => (
   <Box textAlign={textAlign} width={boxWidth}>
-    <img src={image} height={height} width={width} />
+    <img src={image} height={height} alt={alt} width={width} />
     <Box my={subTitle ? '14px' : '24px'}>
       <Typography fontSize='20px' fontWeight='medium' color='#263640'>
         {title}

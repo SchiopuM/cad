@@ -27,7 +27,7 @@ const Link = styled.a`
 const Navbar = () => (
   <NavbarContainer>
     <a href='/'>
-      <img src={logo} height='80px' />
+      <img src={logo} height='80px' alt='logo' />
     </a>
     <LinkGroup>
       <Link href='/'>Home</Link>

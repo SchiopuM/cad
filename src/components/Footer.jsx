@@ -16,7 +16,12 @@ const Footer = () => {
         display='flex'
         justifyContent='space-between'
       >
-        <img src={logo} height='70px' style={{ marginBottom: '15px' }} />
+        <img
+          src={logo}
+          height='70px'
+          style={{ marginBottom: '15px' }}
+          alt='logoWhite'
+        />
         <Box display='flex' justifyContent='space-between'>
           <Box>
             <Typography color='#fff' fontSize='14px' fontWeight='bold'>

@@ -33,7 +33,7 @@ const Card = ({ children, image }) => {
         scroll='body'
       >
         <Content>
-          <img src={image} />
+          <img src={image} alt='card' />
         </Content>
       </Dialog>
     </>
