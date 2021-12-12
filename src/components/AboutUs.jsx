@@ -5,7 +5,7 @@ import { aboutUs } from '../assets/aboutUs';
 import Item from '../common/Item';
 
 const Container = styled.div`
-  margin-top: -200px;
+  margin-top: -250px;
   padding: 5% 15%;
   background-color: #f5f8fa;
 `;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Item from '../common/Item';
 import { Box, Button, Typography } from '@mui/material';
 import Card from '../common/Card';
 import { portfolio, bigSizes } from '../assets/portfolioState';
@@ -11,6 +10,13 @@ const Container = styled.div`
   padding: 5% 15%;
 `;
 
+const Item = styled.div`
+  height: 500px;
+  width: 400px;
+  background-image: url(${(props) => props.image});
+  background-size: cover;
+`;
+
 const Portfolio = () => {
   const [open, setOpen] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
@@ -19,13 +25,13 @@ const Portfolio = () => {
 
   const showService = portfolio.map((el, index) => (
     <Card key={`card-${index}`} image={el.image}>
-      <Item image={el.image} height='400px' alt='portfolio' />
+      <Item image={el.image} />
     </Card>
   ));
 
   const extraService = bigSizes.map((el, index) => (
     <Card key={`portfolio-${index}`} image={el.image}>
-      <Item image={el.image} height='400px' />
+      <Item image={el.image} />
     </Card>
   ));
 
@@ -86,9 +92,8 @@ const Portfolio = () => {
         mt='66px'
       >
         {showService}
+        {seeMore && extraService}
       </Box>
-
-      {seeMore ? <Box>{extraService}</Box> : null}
 
       <Button
         color='inherit'
@@ -102,7 +107,7 @@ const Portfolio = () => {
       <Box display='flex' justifyContent='flex-end'>
         <img
           src={footerImage}
-          height='230px'
+          height='350px'
           alt='footerImage'
           style={{
             boxShadow: '-21px 50px 1px 5px #F5F8FA',

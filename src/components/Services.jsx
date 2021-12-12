@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material';
 import { services } from '../assets/serviceState';
 
 const Container = styled.div`
-  margin-top: -80px;
+  margin-top: -130px;
   padding: 5% 15%;
   background-color: #f5f8fa;
 `;

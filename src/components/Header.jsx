@@ -8,6 +8,7 @@ const Container = styled.div`
   margin-top: 50px;
   padding: 0 15%;
   display: flex;
+  justify-content: space-between;
 `;
 
 const Header = () => (
@@ -26,12 +27,14 @@ const Header = () => (
         office guarantees the success of your projects.
       </Typography>
       <Box sx={{ marginTop: '38px' }}>
-        <Button>See Portfolio</Button>
+        <Button link href='#portfolio'>
+          See Portfolio
+        </Button>
       </Box>
     </Box>
     <img
       src={head}
-      height='400px'
+      height='500px'
       alt='img'
       style={{ boxShadow: '-21px 50px 1px 5px #F5F8FA', marginLeft: '38px' }}
     />
