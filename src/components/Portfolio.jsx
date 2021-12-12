@@ -29,7 +29,7 @@ const Portfolio = () => {
   const [open, setOpen] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   const toggle = () => setOpen((prevState) => !prevState);
 
@@ -47,7 +47,7 @@ const Portfolio = () => {
 
   return (
     <Container id='portfolio'>
-      <Box display='flex' justifyContent='center' my='60px'>
+      <Box display='flex' justifyContent='center' my='100px'>
         <TrustOurVision />
       </Box>
       <Typography fontSize='24px' fontWeight='bold' color='#263640'>
