@@ -39,7 +39,7 @@ const Services = () => {
         high-quality AutoCAD drawings for your use. You get to lower your
         overhead and get more done with CADDrafters!
       </Typography>
-      <Box display='flex' justifyContent='space-between' mt='66px'>
+      <Box display='flex' justifyContent='space-between' mt='66px' mb='300px'>
         {showService}
       </Box>
     </Container>

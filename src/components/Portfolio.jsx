@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Box, Button, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import Card from '../common/Card';
 import { portfolio, bigSizes } from '../assets/portfolioState';
 import footerImage from '../assets/images/foot.jpg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import TrustOurVision from './TrustOurVision';
 
 const Container = styled.div`
+  margin-top: -400px;
   padding: 5% 15%;
 `;
 
@@ -20,6 +28,8 @@ const Item = styled.div`
 const Portfolio = () => {
   const [open, setOpen] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   const toggle = () => setOpen((prevState) => !prevState);
 
@@ -37,6 +47,9 @@ const Portfolio = () => {
 
   return (
     <Container id='portfolio'>
+      <Box display='flex' justifyContent='center' my='60px'>
+        <TrustOurVision />
+      </Box>
       <Typography fontSize='24px' fontWeight='bold' color='#263640'>
         Portfolio
       </Typography>
@@ -107,7 +120,7 @@ const Portfolio = () => {
       <Box display='flex' justifyContent='flex-end'>
         <img
           src={footerImage}
-          height='350px'
+          height={matches ? '230px' : '350px'}
           alt='footerImage'
           style={{
             boxShadow: '-21px 50px 1px 5px #F5F8FA',
