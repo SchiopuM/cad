@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {
-  Box,
-  Button,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import Card from '../common/Card';
 import { portfolio, bigSizes } from '../assets/portfolioState';
 import footerImage from '../assets/images/foot.jpg';
@@ -28,8 +22,6 @@ const Item = styled.div`
 const Portfolio = () => {
   const [open, setOpen] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   const toggle = () => setOpen((prevState) => !prevState);
 
@@ -120,7 +112,7 @@ const Portfolio = () => {
       <Box display='flex' justifyContent='flex-end'>
         <img
           src={footerImage}
-          height={matches ? '230px' : '350px'}
+          height='350px'
           alt='footerImage'
           style={{
             boxShadow: '-21px 50px 1px 5px #F5F8FA',

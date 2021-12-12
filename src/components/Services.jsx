@@ -23,8 +23,13 @@ const Services = () => {
   ));
 
   return (
-    <Container id='services'>
-      <Typography fontSize='24px' fontWeight='bold' color='#263640'>
+    <Container>
+      <Typography
+        fontSize='24px'
+        fontWeight='bold'
+        color='#263640'
+        id='services'
+      >
         Services
       </Typography>
       <Typography
@@ -39,7 +44,7 @@ const Services = () => {
         high-quality AutoCAD drawings for your use. You get to lower your
         overhead and get more done with CADDrafters!
       </Typography>
-      <Box display='flex' justifyContent='space-between' mt='66px' mb='300px'>
+      <Box display='flex' justifyContent='space-between' mt='66px' mb='200px'>
         {showService}
       </Box>
     </Container>
