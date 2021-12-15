@@ -32,7 +32,7 @@ const ContactDialog = () => {
           <Box display='flex' alignItems='center'>
             <PhoneIcon />
             <Box ml='10px'>
-              <Typography>+(970)-987-0685</Typography>
+              <Typography>+1(970)-987-0685</Typography>
             </Box>
           </Box>
           <Box display='flex' alignItems='center' my='10px'>

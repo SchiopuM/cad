@@ -14,6 +14,7 @@ const StyledCard = styled.div`
 const Content = styled(DialogContent)`
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px;
 `;
 

@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Box, Button, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material';
 import Card from '../common/Card';
 import { portfolio, bigSizes } from '../assets/portfolioState';
-import footerImage from '../assets/images/foot.jpg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import TrustOurVision from './TrustOurVision';
 
@@ -13,27 +18,30 @@ const Container = styled.div`
 `;
 
 const Item = styled.div`
-  height: 500px;
-  width: 400px;
+  height: ${(props) => (props.media ? '500px' : '370px')};
+  width: ${(props) => (props.media ? '400px' : '270px')};
   background-image: url(${(props) => props.image});
   background-size: cover;
+  background-position: center;
 `;
 
 const Portfolio = () => {
   const [open, setOpen] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
+  const theme = useTheme();
+  const media = useMediaQuery(() => theme.breakpoints.up('xl'));
 
   const toggle = () => setOpen((prevState) => !prevState);
 
   const showService = portfolio.map((el, index) => (
     <Card key={`card-${index}`} image={el.image}>
-      <Item image={el.image} />
+      <Item image={el.image} media={media} />
     </Card>
   ));
 
   const extraService = bigSizes.map((el, index) => (
     <Card key={`portfolio-${index}`} image={el.image}>
-      <Item image={el.image} />
+      <Item image={el.image} media={media} />
     </Card>
   ));
 
@@ -108,17 +116,6 @@ const Portfolio = () => {
           sx={{ transform: seeMore ? 'rotate(180deg)' : null }}
         />
       </Button>
-
-      <Box display='flex' justifyContent='flex-end'>
-        <img
-          src={footerImage}
-          height='350px'
-          alt='footerImage'
-          style={{
-            boxShadow: '-21px 50px 1px 5px #F5F8FA',
-          }}
-        />
-      </Box>
     </Container>
   );
 };
