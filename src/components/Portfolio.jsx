@@ -46,11 +46,16 @@ const Portfolio = () => {
   ));
 
   return (
-    <Container id='portfolio'>
+    <Container>
       <Box display='flex' justifyContent='center' my='100px'>
         <TrustOurVision />
       </Box>
-      <Typography fontSize='24px' fontWeight='bold' color='#263640'>
+      <Typography
+        fontSize='24px'
+        fontWeight='bold'
+        color='#263640'
+        id='portfolio'
+      >
         Portfolio
       </Typography>
       <Typography
