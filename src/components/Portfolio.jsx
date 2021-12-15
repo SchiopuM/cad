@@ -18,8 +18,8 @@ const Container = styled.div`
 `;
 
 const Item = styled.div`
-  height: ${(props) => (props.media ? '500px' : '370px')};
-  width: ${(props) => (props.media ? '400px' : '270px')};
+  height: ${(props) => (props.mediaQ ? '500px' : '370px')};
+  width: ${(props) => (props.mediaQ ? '400px' : '270px')};
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
@@ -29,19 +29,19 @@ const Portfolio = () => {
   const [open, setOpen] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
   const theme = useTheme();
-  const media = useMediaQuery(() => theme.breakpoints.up('xl'));
+  const mediaQuery = useMediaQuery(() => theme.breakpoints.up('xl'));
 
   const toggle = () => setOpen((prevState) => !prevState);
 
   const showService = portfolio.map((el, index) => (
     <Card key={`card-${index}`} image={el.image}>
-      <Item image={el.image} media={media} />
+      <Item image={el.image} mediaQ={mediaQuery} />
     </Card>
   ));
 
   const extraService = bigSizes.map((el, index) => (
     <Card key={`portfolio-${index}`} image={el.image}>
-      <Item image={el.image} media={media} />
+      <Item image={el.image} mediaQ={mediaQuery} />
     </Card>
   ));
 
